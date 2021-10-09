@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'pages/login_page.dart';
+import 'pages/signin_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Pet Care & training',
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: SignInPage(),
     );
   }
 }
