@@ -203,7 +203,7 @@ class SignInPage extends StatelessWidget {
           color: Colors.white,
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12),
+          padding: const EdgeInsets.symmetric(vertical: 15),
           child: Center(
             child: Text(
               'LOGIN',

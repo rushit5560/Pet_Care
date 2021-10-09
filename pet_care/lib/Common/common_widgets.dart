@@ -60,3 +60,27 @@ class CustomSpacer extends StatelessWidget {
     );
   }
 }
+
+
+class SkipButton extends StatelessWidget {
+  const SkipButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        GestureDetector(
+          onTap: () {
+            print('Skip Clicked');
+          },
+          child: Text(
+            'SKIP',
+            style: TextStyle(fontSize: 18),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
