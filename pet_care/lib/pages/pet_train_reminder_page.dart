@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
+import 'package:pet_care/models/week_reminder_model.dart';
 
 class PetTrainReminderPage extends StatefulWidget {
   const PetTrainReminderPage({Key? key}) : super(key: key);
@@ -14,6 +15,16 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
 
   TimeOfDay time = TimeOfDay.now();
   TimeOfDay? picked/* = TimeOfDay.now()*/;
+
+  List<WeekReminderModel> weekReminderLists = [
+    WeekReminderModel(name: 'S', isSelected: false),
+    WeekReminderModel(name: 'M', isSelected: false),
+    WeekReminderModel(name: 'T', isSelected: false),
+    WeekReminderModel(name: 'W', isSelected: false),
+    WeekReminderModel(name: 'T', isSelected: false),
+    WeekReminderModel(name: 'F', isSelected: false),
+    WeekReminderModel(name: 'S', isSelected: false),
+  ];
 
 
   // @override
@@ -44,11 +55,12 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
                     CustomLogoImage(),
 
                     Expanded(
+                      flex: 1,
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            CustomSpacer(height: Get.height * 0.04, width: 0),
+                            CustomSpacer(height: Get.height * 0.15, width: 0),
                             petTrainReminderText(),
                             CustomSpacer(height: Get.height * 0.09, width: 0),
 
@@ -217,194 +229,37 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
   Widget daysOfWeek() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-
-          // Sunday
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Expanded(
-              child: Container(
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: Colors.white,width: 2)
-                ),
-                child: Center(
+      child: Container(
+        alignment: Alignment.center,
+        height: Get.width * 0.10,
+        child: ListView.builder(
+          itemCount: weekReminderLists.length,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index){
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Expanded(
+                child: Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.white,width: 2)
+                  ),
+                  child: Center(
                     child: Text(
-                        'S',
+                      '${weekReminderLists[index].name}',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15
                       ),
                     ),
-                ),
-              ),
-            ),
-          ),
-          // Monday
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Expanded(
-              child: Container(
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.white,width: 2)
-                ),
-                child: Center(
-                  child: Text(
-                    'M',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15
-                    ),
                   ),
                 ),
               ),
-            ),
-          ),
-          // Tuesday
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Expanded(
-              child: Container(
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.white,width: 2)
-                ),
-                child: Center(
-                  child: Text(
-                    'T',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          // Wednesday
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Expanded(
-              child: Container(
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.white,width: 2)
-                ),
-                child: Center(
-                  child: Text(
-                    'W',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          // Thursday
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Expanded(
-              child: Container(
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.white,width: 2)
-                ),
-                child: Center(
-                  child: Text(
-                    'T',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          // Friday
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Expanded(
-              child: Container(
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.white,width: 2)
-                ),
-                child: Center(
-                  child: Text(
-                    'F',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          // Saturday
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Expanded(
-              child: Container(
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.white,width: 2)
-                ),
-                child: Center(
-                  child: Text(
-                    'S',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-
-          // Extra-----------------
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Expanded(
-              child: Container(
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.white,width: 2),
-                  color: Colors.white
-                ),
-                child: Center(
-                  child: Icon(
-                    Icons.check_rounded,
-                    color: CustomColor.kTealColor,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
+            );
+          },
+        ),
       ),
     );
   }

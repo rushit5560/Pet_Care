@@ -84,3 +84,38 @@ class SkipButton extends StatelessWidget {
   }
 }
 
+InputDecoration textInputDecoration(hintText) {
+  return InputDecoration(
+    hintText: '$hintText',
+    filled: true,
+    fillColor: Colors.grey.shade200,
+    isDense: true,
+    counterText: '',
+    contentPadding: EdgeInsets.all(15),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(
+        color: Colors.grey.shade200,
+      ),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(
+        color: Colors.grey.shade200,
+      ),
+    ),
+    errorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(
+        color: Colors.grey.shade200,
+      ),
+    ),
+    focusedErrorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(
+        color: Colors.grey.shade200,
+      ),
+    ),
+
+  );
+}
