@@ -12,9 +12,8 @@ class PetTrainReminderPage extends StatefulWidget {
 }
 
 class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
-
   TimeOfDay time = TimeOfDay.now();
-  TimeOfDay? picked/* = TimeOfDay.now()*/;
+  TimeOfDay picked = TimeOfDay.now();
 
   List<WeekReminderModel> weekReminderLists = [
     WeekReminderModel(name: 'S', isSelected: false),
@@ -25,7 +24,6 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
     WeekReminderModel(name: 'F', isSelected: false),
     WeekReminderModel(name: 'S', isSelected: false),
   ];
-
 
   // @override
   // void initState() {
@@ -40,7 +38,7 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
       body: SafeArea(
         child: Stack(
           children: [
-            //backGround Image
+            //backGround Image - Import From Common Widget File
             CustomBackGroundImage(),
 
             Container(
@@ -48,10 +46,11 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
                 padding: const EdgeInsets.all(12),
                 child: Column(
                   children: [
+                    // Import From Common Widget File
                     SkipButton(),
                     CustomSpacer(height: Get.height * 0.02, width: 0),
 
-                    // Screen Logo
+                    // Screen Logo - Import From Common Widget File
                     CustomLogoImage(),
 
                     Expanded(
@@ -63,25 +62,18 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
                             CustomSpacer(height: Get.height * 0.15, width: 0),
                             petTrainReminderText(),
                             CustomSpacer(height: Get.height * 0.09, width: 0),
-
                             setTimeForTraining(context),
                             CustomSpacer(height: Get.height * 0.04, width: 0),
-
                             weekText(),
                             CustomSpacer(height: Get.height * 0.02, width: 0),
-
-
-                            daysOfWeek(),
+                            // daysOfWeek(),
                             CustomSpacer(height: Get.height * 0.02, width: 0),
-
                             saveButton(),
                             CustomSpacer(height: Get.height * 0.04, width: 0),
-
                           ],
                         ),
                       ),
                     ),
-
                   ],
                 ),
               ),
@@ -98,8 +90,9 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
-        fontWeight: FontWeight.bold,
+        // fontWeight: FontWeight.bold,
         fontSize: Get.width * 0.06,
+        fontFamily: "Lilita One",
       ),
     );
   }
@@ -117,7 +110,6 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
           child: Container(
             child: Column(
               children: [
-
                 IntrinsicHeight(
                   child: GestureDetector(
                     onTap: () {
@@ -138,7 +130,9 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
                                   // time.minute.isEven.toString().isEmpty
                                   //   ? "${TimeOfDay.now().hour}"
                                   //   : "${time.hour}",
-                                  "${time.hour}".isEmpty ? "00" : "${time.hour}",
+                                  "${time.hour}".isEmpty
+                                      ? "00"
+                                      : "${time.hour}",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 25,
@@ -158,7 +152,9 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
                                   // time.minute.isEven.toString().isEmpty
                                   //   ? "${TimeOfDay.now().minute}"
                                   //   : "${time.minute}",
-                                  "${time.minute}".isEmpty ? "00" : "${time.minute}",
+                                  "${time.minute}".isEmpty
+                                      ? "00"
+                                      : "${time.minute}",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 25,
@@ -167,10 +163,10 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
                               ),
                             ),
                             VerticalDivider(
-                                thickness: 1,
-                                color: Colors.grey,
-                                indent: 3,
-                                endIndent: 3,
+                              thickness: 1,
+                              color: Colors.grey,
+                              indent: 3,
+                              endIndent: 3,
                             ),
                             Expanded(
                               child: Center(
@@ -189,21 +185,39 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
                     ),
                   ),
                 ),
-
                 SizedBox(height: 10),
                 Container(
                   child: Row(
                     children: [
                       Expanded(
                         child: Center(
-                            child: Text('Hour'),
+                          child: Text(
+                            'Hour',
+                            style: TextStyle(
+                              fontFamily: "Poppins",
+                            ),
+                          ),
                         ),
                       ),
                       Expanded(
-                        child: Center(child: Text('Minutes')),
+                        child: Center(
+                          child: Text(
+                            'Minutes',
+                            style: TextStyle(
+                              fontFamily: "Poppins",
+                            ),
+                          ),
+                        ),
                       ),
                       Expanded(
-                        child: Center(child: Text('Second')),
+                        child: Center(
+                          child: Text(
+                            'Second',
+                            style: TextStyle(
+                              fontFamily: "Poppins",
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -222,53 +236,51 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
       style: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.bold,
+        fontFamily: "Poppins",
       ),
     );
   }
 
-  Widget daysOfWeek() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Container(
-        alignment: Alignment.center,
-        height: Get.width * 0.10,
-        child: ListView.builder(
-          itemCount: weekReminderLists.length,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index){
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Expanded(
-                child: Container(
-                  height: 30,
-                  width: 30,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.white,width: 2)
-                  ),
-                  child: Center(
-                    child: Text(
-                      '${weekReminderLists[index].name}',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-
+  // Widget daysOfWeek() {
+  //   return Padding(
+  //     padding: const EdgeInsets.symmetric(horizontal: 10),
+  //     child: Container(
+  //       alignment: Alignment.center,
+  //       height: Get.width * 0.10,
+  //       child: ListView.builder(
+  //         itemCount: weekReminderLists.length,
+  //         scrollDirection: Axis.horizontal,
+  //         itemBuilder: (context, index) {
+  //           return Padding(
+  //             padding: const EdgeInsets.symmetric(horizontal: 5),
+  //             child: Expanded(
+  //               child: Container(
+  //                 height: 30,
+  //                 width: 30,
+  //                 decoration: BoxDecoration(
+  //                     borderRadius: BorderRadius.circular(8),
+  //                     border: Border.all(color: Colors.white, width: 2)),
+  //                 child: Center(
+  //                   child: Text(
+  //                     '${weekReminderLists[index].name}',
+  //                     style:
+  //                         TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+  //                   ),
+  //                 ),
+  //               ),
+  //             ),
+  //           );
+  //         },
+  //       ),
+  //     ),
+  //   );
+  // }
 
   Widget saveButton() {
     return GestureDetector(
       onTap: () {
         // Get.to(()=> PetTrainReminderPage());
+        print('Time :: $time');
       },
       child: Container(
         width: Get.width * 0.40,
@@ -293,16 +305,18 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
     );
   }
 
-
-
   Future selectTime(BuildContext context) async {
-    time = TimeOfDay.now();
-    picked = (await showTimePicker(context: context, initialTime: TimeOfDay.now()))!;
+    // time = TimeOfDay.now();
+    picked =
+        (await showTimePicker(context: context, initialTime: time))!;
 
-    if(time != null) {
+    if (time != TimeOfDay.now()) {
       setState(() {
-        time = picked!;
+        time = picked;
       });
+    }
+    else {
+
     }
   }
 }

@@ -44,7 +44,7 @@ class _PetSelectPageState extends State<PetSelectPage> {
                           children: [
                             CustomSpacer(height: Get.height * 0.04, width: 0),
                             petTypeText(),
-                            CustomSpacer(height: Get.height * 0.10, width: 0),
+                            CustomSpacer(height: Get.height * 0.08, width: 0),
 
                             petSelectDropDown(),
                             CustomSpacer(height: Get.height * 0.05, width: 0),
@@ -72,8 +72,9 @@ class _PetSelectPageState extends State<PetSelectPage> {
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
-        fontWeight: FontWeight.bold,
+        // fontWeight: FontWeight.bold,
         fontSize: Get.width * 0.06,
+        fontFamily: "Lilita One",
       ),
     );
   }
@@ -121,7 +122,7 @@ class _PetSelectPageState extends State<PetSelectPage> {
             child: Text(
               'NEXT',
               style: TextStyle(
-                color: CustomColor.kTealColor,
+                color: CustomColor.kTabBarColor,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),

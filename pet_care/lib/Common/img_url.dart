@@ -24,4 +24,9 @@ class ImgUrl {
   static const noti3Img = mainPath + 'noti3.png';
 
   static const clicker = mainPath + 'clicker.png';
+
+  static const exp1Img = mainPath + 'exp1.png';
+  static const exp2Img = mainPath + 'exp2.png';
+  static const exp3Img = mainPath + 'exp3.png';
+  static const exp4Img = mainPath + 'exp4.png';
 }

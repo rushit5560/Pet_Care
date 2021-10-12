@@ -29,7 +29,7 @@ class AAAA extends StatelessWidget {
               Container(
                 height: Get.height * 0.16,
                 decoration: BoxDecoration(
-                  color: CustomColor.kBottomBarColor,
+                  color: CustomColor.kAppBarColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Row(
@@ -265,7 +265,7 @@ class AAAA extends StatelessWidget {
                     return Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: CustomColor.kBottomBarColor
+                        color: CustomColor.kAppBarColor
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),

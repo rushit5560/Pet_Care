@@ -31,7 +31,7 @@ class _IndexPageState extends State<IndexPage> {
           padding: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            color: CustomColor.kBottomBarColor
+            color: CustomColor.kAppBarColor
             // color: Colors.black,
           ),
           child: BottomNavigationBar(

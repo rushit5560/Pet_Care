@@ -42,7 +42,7 @@ class ProfilePage extends StatelessWidget {
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            color: CustomColor.kBottomBarColor),
+            color: CustomColor.kAppBarColor),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -83,7 +83,7 @@ class ProfilePage extends StatelessWidget {
                 width: Get.width * 0.40,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: CustomColor.kBottomBarColor
+                  color: CustomColor.kAppBarColor
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10),
@@ -181,7 +181,7 @@ class ProfilePage extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 35, vertical: 15),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: CustomColor.kBottomBarColor,
+                    color: CustomColor.kAppBarColor,
                   ),
                   child: Text(
                     'SAVE',

@@ -36,7 +36,7 @@ class SignInPage extends StatelessWidget {
                         CustomSpacer(height: Get.height * 0.05, width: 0),
                         // Screen Logo
                         CustomLogoImage(),
-                        CustomSpacer(height: Get.height * 0.06, width: 0),
+                        CustomSpacer(height: Get.height * 0.12, width: 0),
 
                         loginText(),
                         CustomSpacer(height: Get.height * 0.05, width: 0),
@@ -48,7 +48,7 @@ class SignInPage extends StatelessWidget {
                         CustomSpacer(height: Get.height * 0.015, width: 0),
 
                         forgotPassword(),
-                        CustomSpacer(height: Get.height * 0.06, width: 0),
+                        CustomSpacer(height: Get.height * 0.045, width: 0),
 
                         loginButton(),
                         CustomSpacer(height: Get.height * 0.04, width: 0),
@@ -75,7 +75,11 @@ class SignInPage extends StatelessWidget {
   Widget loginText() {
     return Text(
       'Login Your Account',
-      style: TextStyle(fontWeight: FontWeight.bold, fontSize: Get.width * 0.06),
+      style: TextStyle(
+          // fontWeight: FontWeight.bold,
+          fontSize: Get.width * 0.06,
+        fontFamily: "Lilita One"
+      ),
     );
   }
 
@@ -208,7 +212,7 @@ class SignInPage extends StatelessWidget {
             child: Text(
               'LOGIN',
               style: TextStyle(
-                color: CustomColor.kTealColor,
+                color: CustomColor.kTabBarColor,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),

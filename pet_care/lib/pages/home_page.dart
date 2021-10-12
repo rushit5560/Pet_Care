@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
+import 'package:pet_care/pages/ask_a_question_page.dart';
+import 'package:pet_care/pages/explore_program_page.dart';
 import 'package:pet_care/pages/profile_page.dart';
 
 import 'notification_page.dart';
@@ -27,6 +29,12 @@ class HomePage extends StatelessWidget {
     '${ImgUrl.dog4Img}',
     '${ImgUrl.dog5Img}',
     '${ImgUrl.dog6Img}',
+    '${ImgUrl.dog4Img}',
+    '${ImgUrl.dog5Img}',
+    '${ImgUrl.dog6Img}',
+    '${ImgUrl.dog4Img}',
+    '${ImgUrl.dog5Img}',
+    '${ImgUrl.dog6Img}',
   ];
 
   @override
@@ -46,10 +54,10 @@ class HomePage extends StatelessWidget {
                     Container(
                       // height: 35,
                       child: TabBar(
-                        labelColor: CustomColor.kAppBarColor,
+                        labelColor: CustomColor.kTabBarColor,
                         unselectedLabelColor: Colors.grey,
                         indicatorSize: TabBarIndicatorSize.label,
-                        indicatorColor: CustomColor.kAppBarColor,
+                        indicatorColor: CustomColor.kTabBarColor,
                         isScrollable: true,
                         tabs: tabsList.map((title) => Tab(text: title)).toList(),
                       ),
@@ -90,7 +98,7 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: CustomColor.kBottomBarColor),
+                color: CustomColor.kAppBarColor),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -153,7 +161,7 @@ class HomePage extends StatelessWidget {
 
   Widget dogTab() {
     return Padding(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -161,7 +169,7 @@ class HomePage extends StatelessWidget {
             Container(
               height: Get.height * 0.16,
               decoration: BoxDecoration(
-                color: CustomColor.kBottomBarColor,
+                color: CustomColor.kAppBarColor,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
@@ -189,47 +197,65 @@ class HomePage extends StatelessWidget {
                           SizedBox(height: 12),
                           Row(
                             children: [
+
+                              // ask a question Module
                               Expanded(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    border: Border.all(
-                                        color: CustomColor.kAppBarColor),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 5, horizontal: 5),
-                                    child: Center(
-                                      child: Text(
-                                        'ASK A QUESTION',
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                            color: CustomColor.kAppBarColor,
-                                            fontSize: 12),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Get.to(()=> AskAQuestionPage(),
+                                      transition: Transition.rightToLeft,
+                                    );
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(
+                                          color: CustomColor.kTabBarColor),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 5, horizontal: 5),
+                                      child: Center(
+                                        child: Text(
+                                          'ASK A QUESTION',
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                              color: CustomColor.kTabBarColor,
+                                              fontSize: 12),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
                               SizedBox(width: 10),
+
+                              // Explore Program Module
                               Expanded(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    border: Border.all(color: Colors.black),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 5, horizontal: 5),
-                                    child: Center(
-                                      child: Text(
-                                        'EXPLORE PROGRAM',
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 12),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Get.to(()=> ExploreProgramPage(),
+                                      transition: Transition.rightToLeft,
+                                    );
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color: Colors.black),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 5, horizontal: 5),
+                                      child: Center(
+                                        child: Text(
+                                          'EXPLORE PROGRAM',
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -281,7 +307,7 @@ class HomePage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(5),
                                         border: Border.all(
-                                            color: CustomColor.kAppBarColor),
+                                            color: CustomColor.kTabBarColor),
                                         color: Colors.white),
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(
@@ -291,7 +317,7 @@ class HomePage extends StatelessWidget {
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
-                                            color: CustomColor.kAppBarColor,
+                                            color: CustomColor.kTabBarColor,
                                             fontSize: 12),
                                       ),
                                     ),
@@ -383,13 +409,14 @@ class HomePage extends StatelessWidget {
 
             //Gridview
             Container(
-              height: Get.height * 0.16,
+              // height: Get.height * 0.18,
               child: GridView.builder(
                 itemCount: dogImgLists.length,
-                scrollDirection: Axis.horizontal,
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
                 physics: BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1,
+                    crossAxisCount: 3,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10
                 ),
@@ -397,7 +424,7 @@ class HomePage extends StatelessWidget {
                   return Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: CustomColor.kBottomBarColor
+                        color: CustomColor.kAppBarColor
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),

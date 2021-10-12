@@ -68,8 +68,9 @@ class PetNamePage extends StatelessWidget {
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
-        fontWeight: FontWeight.bold,
+        // fontWeight: FontWeight.bold,
         fontSize: Get.width * 0.06,
+        fontFamily: "Lilita One",
       ),
     );
   }
@@ -127,7 +128,7 @@ class PetNamePage extends StatelessWidget {
             child: Text(
               'NEXT',
               style: TextStyle(
-                color: CustomColor.kTealColor,
+                color: CustomColor.kTabBarColor,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),

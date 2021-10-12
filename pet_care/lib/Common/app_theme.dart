@@ -7,7 +7,7 @@ ThemeData appTheme() {
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: CustomColor.kBottomBarColor,
+        backgroundColor: CustomColor.kAppBarColor,
         selectedLabelStyle: TextStyle(fontSize: 0.0),
         unselectedLabelStyle: TextStyle(fontSize: 0.0),
         showSelectedLabels: false,

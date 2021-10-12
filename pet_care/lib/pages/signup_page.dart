@@ -36,10 +36,10 @@ class SignUpPage extends StatelessWidget {
                         CustomSpacer(height: Get.height * 0.05, width: 0),
                         // Screen Logo
                         CustomLogoImage(),
-                        CustomSpacer(height: Get.height * 0.06, width: 0),
+                        CustomSpacer(height: Get.height * 0.12, width: 0),
 
                         createAccountText(),
-                        CustomSpacer(height: Get.height * 0.05, width: 0),
+                        CustomSpacer(height: Get.height * 0.04, width: 0),
 
                         emailField(),
                         CustomSpacer(height: Get.height * 0.015, width: 0),
@@ -48,7 +48,7 @@ class SignUpPage extends StatelessWidget {
                         CustomSpacer(height: Get.height * 0.015, width: 0),
 
                         phoneNumberField(),
-                        CustomSpacer(height: Get.height * 0.06, width: 0),
+                        CustomSpacer(height: Get.height * 0.05, width: 0),
 
                         signUpButton(),
                         CustomSpacer(height: Get.height * 0.04, width: 0),
@@ -227,7 +227,7 @@ class SignUpPage extends StatelessWidget {
             child: Text(
               'SIGN UP',
               style: TextStyle(
-                color: CustomColor.kTealColor,
+                color: CustomColor.kTabBarColor,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),

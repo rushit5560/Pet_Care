@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
 
@@ -27,27 +28,8 @@ class NotificationPage extends StatelessWidget {
         child: Column(
           children: [
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: CustomColor.kBottomBarColor
-                ),
-
-                child: Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: Text(
-                    'NOTIFICATION',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            // Import From Common Widget File
+            CustomAppBar('NOTIFICATION'),
 
             Expanded(
               child: Container(
@@ -73,7 +55,7 @@ class NotificationPage extends StatelessWidget {
                                 padding: EdgeInsets.all(15),
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: CustomColor.kBottomBarColor,
+                                  color: CustomColor.kAppBarColor,
                                   // image: DecorationImage(
                                   //   image: AssetImage(ImgUrl.noti1Img)
                                   // ),

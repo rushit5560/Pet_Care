@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pet_care/pages/index_page.dart';
 
+import 'custom_color.dart';
 import 'img_url.dart';
 
 class CustomBackGroundImage extends StatelessWidget {
@@ -36,16 +38,6 @@ class CustomLogoImage extends StatelessWidget {
   }
 }
 
-// class CustomDivider extends StatelessWidget {
-//   // const CustomDivider({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Divider(
-//       thickness: 1,
-//     );
-//   }
-// }
 
 class CustomSpacer extends StatelessWidget {
 
@@ -73,10 +65,14 @@ class SkipButton extends StatelessWidget {
         GestureDetector(
           onTap: () {
             print('Skip Clicked');
+            Get.offAll(()=> IndexPage());
           },
           child: Text(
             'SKIP',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(
+                fontSize: 18,
+              fontFamily: "Poppins"
+            ),
           ),
         ),
       ],
@@ -84,6 +80,7 @@ class SkipButton extends StatelessWidget {
   }
 }
 
+// Input Decoration Use In Profile Page
 InputDecoration textInputDecoration(hintText) {
   return InputDecoration(
     hintText: '$hintText',
@@ -118,4 +115,37 @@ InputDecoration textInputDecoration(hintText) {
     ),
 
   );
+}
+
+class CustomAppBar extends StatelessWidget {
+  // const CustomAppBar({Key? key}) : super(key: key);
+
+  String name;
+  CustomAppBar(this.name);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: CustomColor.kAppBarColor
+        ),
+
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Text(
+            '$name',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+              fontFamily: "Poppins",
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }

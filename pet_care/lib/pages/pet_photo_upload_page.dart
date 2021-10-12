@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
@@ -13,6 +16,10 @@ class PetPhotoUploadPage extends StatefulWidget {
 }
 
 class _PetPhotoUploadPageState extends State<PetPhotoUploadPage> {
+
+  final imagePicker = ImagePicker();
+  File? file;
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +36,7 @@ class _PetPhotoUploadPageState extends State<PetPhotoUploadPage> {
                 padding: const EdgeInsets.all(12),
                 child: Column(
                   children: [
+                    // Import From Common Widget File
                     SkipButton(),
                     CustomSpacer(height: Get.height * 0.02, width: 0),
 
@@ -69,8 +77,9 @@ class _PetPhotoUploadPageState extends State<PetPhotoUploadPage> {
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
-        fontWeight: FontWeight.bold,
+        // fontWeight: FontWeight.bold,
         fontSize: Get.width * 0.06,
+        fontFamily: "Lilita One",
       ),
     );
   }
@@ -79,7 +88,7 @@ class _PetPhotoUploadPageState extends State<PetPhotoUploadPage> {
     return Stack(
       children: [
 
-        /*_image != null
+        file != null
             ? Container(
           width: Get.width * 0.33,
           height: Get.width * 0.33,
@@ -87,12 +96,12 @@ class _PetPhotoUploadPageState extends State<PetPhotoUploadPage> {
             color: Colors.white,
             shape: BoxShape.circle,
             image: DecorationImage(
-              image: FileImage(_image),
+              image: FileImage(file!),
               fit: BoxFit.cover,
-            )
+            ),
           ),
         )
-        : */Container(
+        : Container(
           width: Get.width * 0.33,
           height: Get.width * 0.33,
           decoration: BoxDecoration(
@@ -151,14 +160,14 @@ class _PetPhotoUploadPageState extends State<PetPhotoUploadPage> {
                       leading: new Icon(Icons.photo_library),
                       title: new Text('Gallery'),
                       onTap: () {
-                        // gallery();
+                        gallery();
                         Navigator.of(context).pop();
                       }),
                   new ListTile(
                     leading: new Icon(Icons.photo_camera),
                     title: new Text('Camera'),
                     onTap: () {
-                      // camera();
+                      camera();
                       Navigator.of(context).pop();
                     },
                   ),
@@ -170,6 +179,29 @@ class _PetPhotoUploadPageState extends State<PetPhotoUploadPage> {
     );
   }
 
+  void gallery() async {
+    final image = await imagePicker.getImage(source: ImageSource.gallery);
+
+    if(image != null){
+      setState(() {
+        file = File(image.path);
+      });
+    } else{
+
+    }
+  }
+
+  void camera() async {
+    final image = await imagePicker.getImage(source: ImageSource.camera);
+
+    if(image != null){
+      setState(() {
+        file = File(image.path);
+      });
+    } else{
+
+    }
+  }
 
   Widget nextButton() {
     return GestureDetector(
