@@ -29,4 +29,8 @@ class ImgUrl {
   static const exp2Img = mainPath + 'exp2.png';
   static const exp3Img = mainPath + 'exp3.png';
   static const exp4Img = mainPath + 'exp4.png';
+
+  static const lesson1Img = mainPath + 'lesson1.png';
+  static const lesson2Img = mainPath + 'lesson2.png';
+  static const lesson3Img = mainPath + 'lesson3.png';
 }

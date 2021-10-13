@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pet_care/pages/pet_train_reminder_page.dart';
+import 'package:pet_care/pages/training_plan_page.dart';
 import 'Common/app_theme.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: appTheme(),
 
-      home: PetTrainReminderPage(),
+      home: TrainingPlanPage(),
     );
   }
 }

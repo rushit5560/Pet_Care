@@ -144,7 +144,7 @@ class HomePage extends StatelessWidget {
               width: Get.width * 0.16,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: CustomColor.kAppBarColor,
+                color: CustomColor.kTealColor,
               ),
               child: Padding(
                 padding: const EdgeInsets.all(10),

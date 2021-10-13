@@ -13,7 +13,9 @@ class PetTrainReminderPage extends StatefulWidget {
 
 class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
   TimeOfDay time = TimeOfDay.now();
-  TimeOfDay picked = TimeOfDay.now();
+  TimeOfDay? picked
+
+      /* = TimeOfDay.now()*/;
 
   List<WeekReminderModel> weekReminderLists = [
     WeekReminderModel(name: 'S', isSelected: false),
@@ -56,21 +58,23 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
                     Expanded(
                       flex: 1,
                       child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomSpacer(height: Get.height * 0.15, width: 0),
-                            petTrainReminderText(),
-                            CustomSpacer(height: Get.height * 0.09, width: 0),
-                            setTimeForTraining(context),
-                            CustomSpacer(height: Get.height * 0.04, width: 0),
-                            weekText(),
-                            CustomSpacer(height: Get.height * 0.02, width: 0),
-                            // daysOfWeek(),
-                            CustomSpacer(height: Get.height * 0.02, width: 0),
-                            saveButton(),
-                            CustomSpacer(height: Get.height * 0.04, width: 0),
-                          ],
+                        child: Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CustomSpacer(height: Get.height * 0.15, width: 0),
+                              petTrainReminderText(),
+                              CustomSpacer(height: Get.height * 0.09, width: 0),
+                              setTimeForTraining(context),
+                              CustomSpacer(height: Get.height * 0.04, width: 0),
+                              weekText(),
+                              CustomSpacer(height: Get.height * 0.02, width: 0),
+                              daysOfWeek(),
+                              CustomSpacer(height: Get.height * 0.02, width: 0),
+                              saveButton(),
+                              CustomSpacer(height: Get.height * 0.04, width: 0),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -241,40 +245,99 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
     );
   }
 
-  // Widget daysOfWeek() {
-  //   return Padding(
-  //     padding: const EdgeInsets.symmetric(horizontal: 10),
-  //     child: Container(
-  //       alignment: Alignment.center,
-  //       height: Get.width * 0.10,
-  //       child: ListView.builder(
-  //         itemCount: weekReminderLists.length,
-  //         scrollDirection: Axis.horizontal,
-  //         itemBuilder: (context, index) {
-  //           return Padding(
-  //             padding: const EdgeInsets.symmetric(horizontal: 5),
-  //             child: Expanded(
-  //               child: Container(
-  //                 height: 30,
-  //                 width: 30,
-  //                 decoration: BoxDecoration(
-  //                     borderRadius: BorderRadius.circular(8),
-  //                     border: Border.all(color: Colors.white, width: 2)),
-  //                 child: Center(
-  //                   child: Text(
-  //                     '${weekReminderLists[index].name}',
-  //                     style:
-  //                         TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-  //                   ),
-  //                 ),
-  //               ),
-  //             ),
-  //           );
-  //         },
-  //       ),
-  //     ),
-  //   );
-  // }
+  Widget daysOfWeek() {
+    return Container(
+      height: 30,
+      alignment: Alignment.center,
+      child: ListView.builder(
+        itemCount: weekReminderLists.length,
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  print('${weekReminderLists[index].name}');
+                  setState(() {
+                    weekReminderLists[index].isSelected =
+                    !weekReminderLists[index].isSelected;
+                  });
+                },
+                child: weekReminderLists[index].isSelected
+                    ? Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.white,
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.check_rounded,
+                            color: CustomColor.kTabBarColor,
+                          ),
+                        ),
+                      )
+                    : Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.white, width: 2),
+                        ),
+                        child: Center(
+                          child: Text(
+                            '${weekReminderLists[index].name}',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 15),
+                          ),
+                        ),
+                      ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  /*Widget daysOfWeek() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Container(
+        alignment: Alignment.center,
+        height: Get.width * 0.10,
+        child: ListView.builder(
+          itemCount: weekReminderLists.length,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Expanded(
+                child: Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.white, width: 2)),
+                  child: Center(
+                    child: Text(
+                      '${weekReminderLists[index].name}',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }*/
 
   Widget saveButton() {
     return GestureDetector(
@@ -294,7 +357,7 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
             child: Text(
               'SAVE',
               style: TextStyle(
-                color: CustomColor.kTealColor,
+                color: CustomColor.kTabBarColor,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
@@ -307,16 +370,12 @@ class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
 
   Future selectTime(BuildContext context) async {
     // time = TimeOfDay.now();
-    picked =
-        (await showTimePicker(context: context, initialTime: time))!;
+    picked = (await showTimePicker(context: context, initialTime: time))!;
 
     if (time != TimeOfDay.now()) {
       setState(() {
-        time = picked;
+        time = picked!;
       });
-    }
-    else {
-
-    }
+    } else {}
   }
 }
