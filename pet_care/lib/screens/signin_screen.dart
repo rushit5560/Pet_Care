@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/controller/signin_page_controller.dart';
+import 'package:pet_care/screens/index_screen.dart';
 import 'package:pet_care/screens/signup_screen.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -199,6 +200,7 @@ class SignInScreen extends StatelessWidget {
         print('Login');
         print('${emailPhoneController.text.trim()}');
         print('${passwordController.text.trim()}');
+        Get.to(() => IndexScreen());
       },
       child: Container(
         width: Get.width * 0.40,

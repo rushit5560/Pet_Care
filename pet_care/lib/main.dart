@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pet_care/screens/signin_screen.dart';
 import 'package:pet_care/screens/training_plan_screen.dart';
 import 'Common/app_theme.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: appTheme(),
 
-      home: TrainingPlanScreen(),
+      home: SignInScreen(),
     );
   }
 }
