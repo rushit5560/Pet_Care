@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
-import 'package:pet_care/pages/ask_a_question_page.dart';
-import 'package:pet_care/pages/explore_program_page.dart';
-import 'package:pet_care/pages/profile_page.dart';
+import 'package:pet_care/screens/ask_a_question_screen.dart';
+import 'package:pet_care/screens/explore_program_screen.dart';
+import 'package:pet_care/screens/profile_screen.dart';
 
-import 'notification_page.dart';
+import 'notification_screen.dart';
 
-class HomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   // const HomePage({Key? key}) : super(key: key);
 
   List<String> tabsList = <String>[
@@ -119,7 +119,7 @@ class HomePage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(()=> NotificationPage(),
+                    Get.to(()=> NotificationScreen(),
                       transition: Transition.rightToLeft
                     );
                   },
@@ -135,7 +135,7 @@ class HomePage extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              Get.to(()=> ProfilePage(),
+              Get.to(()=> ProfileScreen(),
                 transition: Transition.leftToRight
               );
             },
@@ -202,7 +202,7 @@ class HomePage extends StatelessWidget {
                               Expanded(
                                 child: GestureDetector(
                                   onTap: () {
-                                    Get.to(()=> AskAQuestionPage(),
+                                    Get.to(()=> AskAQuestionScreen(),
                                       transition: Transition.rightToLeft,
                                     );
                                   },
@@ -235,7 +235,7 @@ class HomePage extends StatelessWidget {
                               Expanded(
                                 child: GestureDetector(
                                   onTap: () {
-                                    Get.to(()=> ExploreProgramPage(),
+                                    Get.to(()=> ExploreProgramScreen(),
                                       transition: Transition.rightToLeft,
                                     );
                                   },

@@ -5,7 +5,7 @@ import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/models/ask_a_question_model.dart';
 
 
-class AskAQuestionPage extends StatelessWidget {
+class AskAQuestionScreen extends StatelessWidget {
   // const AskAQuestionPage({Key? key}) : super(key: key);
 
   List<AskAQuestionModel> questionsLists = [

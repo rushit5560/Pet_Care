@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pet_care/pages/index_page.dart';
+import 'package:pet_care/screens/index_screen.dart';
 
 import 'custom_color.dart';
 import 'img_url.dart';
@@ -65,7 +65,7 @@ class SkipButton extends StatelessWidget {
         GestureDetector(
           onTap: () {
             print('Skip Clicked');
-            Get.offAll(()=> IndexPage());
+            Get.offAll(()=> IndexScreen());
           },
           child: Text(
             'SKIP',

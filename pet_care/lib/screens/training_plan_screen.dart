@@ -4,8 +4,8 @@ import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
 
-class TrainingPlanPage extends StatelessWidget {
-  const TrainingPlanPage({Key? key}) : super(key: key);
+class TrainingPlanScreen extends StatelessWidget {
+  const TrainingPlanScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/controller/signin_page_controller.dart';
-import 'package:pet_care/pages/signup_page.dart';
+import 'package:pet_care/screens/signup_screen.dart';
 
-class SignInPage extends StatelessWidget {
+class SignInScreen extends StatelessWidget {
   // const LoginPage({Key? key}) : super(key: key);
 
   SignInPageController signInPageController = Get.put(SignInPageController());
@@ -227,7 +227,7 @@ class SignInPage extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         print('New Account');
-        Get.to(()=> SignUpPage());
+        Get.to(()=> SignUpScreen());
       },
       child: Text(
         'Create New Account',

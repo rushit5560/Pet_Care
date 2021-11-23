@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
-import 'package:pet_care/pages/pet_gender_page.dart';
+import 'package:pet_care/screens/pet_gender_screen.dart';
 
-class PetNamePage extends StatelessWidget {
+class PetNameScreen extends StatelessWidget {
   // const PetNamePage({Key? key}) : super(key: key);
 
   TextEditingController petNameController = TextEditingController();
@@ -113,7 +113,7 @@ class PetNamePage extends StatelessWidget {
       onTap: () {
         if(formKey.currentState!.validate()){
           print('Pet Name : ${petNameController.text.trim()}');
-          Get.to(()=> PetGenderPage());
+          Get.to(()=> PetGenderScreen());
         }
       },
       child: Container(

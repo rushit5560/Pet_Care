@@ -5,7 +5,7 @@ import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfileScreen extends StatelessWidget {
   // const ProfilePage({Key? key}) : super(key: key);
 
   GlobalKey<FormState> formKey = GlobalKey();

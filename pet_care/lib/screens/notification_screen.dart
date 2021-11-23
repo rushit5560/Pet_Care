@@ -4,7 +4,7 @@ import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
 
-class NotificationPage extends StatelessWidget {
+class NotificationScreen extends StatelessWidget {
   // const NotificationPage({Key? key}) : super(key: key);
 
 

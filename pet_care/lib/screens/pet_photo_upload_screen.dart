@@ -6,16 +6,16 @@ import 'package:image_picker/image_picker.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
-import 'package:pet_care/pages/pet_train_reminder_page.dart';
+import 'package:pet_care/screens/pet_train_reminder_screen.dart';
 
-class PetPhotoUploadPage extends StatefulWidget {
+class PetPhotoUploadScreen extends StatefulWidget {
   // const PetPhotoUploadPage({Key? key}) : super(key: key);
 
   @override
-  _PetPhotoUploadPageState createState() => _PetPhotoUploadPageState();
+  _PetPhotoUploadScreenState createState() => _PetPhotoUploadScreenState();
 }
 
-class _PetPhotoUploadPageState extends State<PetPhotoUploadPage> {
+class _PetPhotoUploadScreenState extends State<PetPhotoUploadScreen> {
 
   final imagePicker = ImagePicker();
   File? file;
@@ -206,7 +206,7 @@ class _PetPhotoUploadPageState extends State<PetPhotoUploadPage> {
   Widget nextButton() {
     return GestureDetector(
       onTap: () {
-        Get.to(()=> PetTrainReminderPage());
+        Get.to(()=> PetTrainReminderScreen());
       },
       child: Container(
         width: Get.width * 0.40,

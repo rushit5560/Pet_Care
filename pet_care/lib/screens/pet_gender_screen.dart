@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
-import 'package:pet_care/pages/pet_photo_upload_page.dart';
+import 'package:pet_care/screens/pet_photo_upload_screen.dart';
 
 
-class PetGenderPage extends StatefulWidget {
+class PetGenderScreen extends StatefulWidget {
   // const PetGenderPage({Key? key}) : super(key: key);
 
   @override
-  _PetGenderPageState createState() => _PetGenderPageState();
+  _PetGenderScreenState createState() => _PetGenderScreenState();
 }
 
-class _PetGenderPageState extends State<PetGenderPage> {
+class _PetGenderScreenState extends State<PetGenderScreen> {
 
   List<String> dropDownList = <String>['Select Gender', 'Male', 'Female'];
   String dropdownValue = 'Select Gender';
@@ -114,7 +114,7 @@ class _PetGenderPageState extends State<PetGenderPage> {
         if(dropdownValue.contains('Select Gender')){
           Get.snackbar('Please Select Your Pet Gender!', '');
         } else {
-          Get.to(()=> PetPhotoUploadPage());
+          Get.to(()=> PetPhotoUploadScreen());
         }
       },
       child: Container(

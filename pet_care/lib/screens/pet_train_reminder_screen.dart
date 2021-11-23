@@ -4,14 +4,14 @@ import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/models/week_reminder_model.dart';
 
-class PetTrainReminderPage extends StatefulWidget {
-  const PetTrainReminderPage({Key? key}) : super(key: key);
+class PetTrainReminderScreen extends StatefulWidget {
+  const PetTrainReminderScreen({Key? key}) : super(key: key);
 
   @override
-  _PetTrainReminderPageState createState() => _PetTrainReminderPageState();
+  _PetTrainReminderScreenState createState() => _PetTrainReminderScreenState();
 }
 
-class _PetTrainReminderPageState extends State<PetTrainReminderPage> {
+class _PetTrainReminderScreenState extends State<PetTrainReminderScreen> {
   TimeOfDay time = TimeOfDay.now();
   TimeOfDay? picked
 

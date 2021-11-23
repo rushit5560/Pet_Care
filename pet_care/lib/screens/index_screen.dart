@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
-import 'package:pet_care/pages/first_page.dart';
-import 'package:pet_care/pages/home_page.dart';
-import 'package:pet_care/pages/second_page.dart';
-import 'package:pet_care/pages/setting_page.dart';
+import 'package:pet_care/screens/first_screen.dart';
+import 'package:pet_care/screens/home_screen.dart';
+import 'package:pet_care/screens/second_screen.dart';
+import 'package:pet_care/screens/setting_screen.dart';
 
 
-class IndexPage extends StatefulWidget {
-  const IndexPage({Key? key}) : super(key: key);
+class IndexScreen extends StatefulWidget {
+  const IndexScreen({Key? key}) : super(key: key);
 
   @override
-  _IndexPageState createState() => _IndexPageState();
+  _IndexScreenState createState() => _IndexScreenState();
 }
 
-class _IndexPageState extends State<IndexPage> {
+class _IndexScreenState extends State<IndexScreen> {
   int _currentIndex = 0;
-  final tabs = [HomePage(), FirstPage(), SecondPage(), SettingPage()];
+  final tabs = [HomeScreen(), FirstScreen(), SecondScreen(), SettingScreen()];
 
   @override
   Widget build(BuildContext context) {

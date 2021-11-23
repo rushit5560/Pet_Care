@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
-import 'package:pet_care/pages/pet_name_page.dart';
+import 'package:pet_care/screens/pet_name_screen.dart';
 
-class PetSelectPage extends StatefulWidget {
+class PetSelectScreen extends StatefulWidget {
   // const SelectPetPage({Key? key}) : super(key: key);
 
   @override
-  _PetSelectPageState createState() => _PetSelectPageState();
+  _PetSelectScreenState createState() => _PetSelectScreenState();
 }
 
-class _PetSelectPageState extends State<PetSelectPage> {
+class _PetSelectScreenState extends State<PetSelectScreen> {
 
   List<String> dropDownList = <String>['Dog', 'Cat', 'Mouse', 'Parrot', 'Hamsters', 'Guinea Pigs', 'Rabbits', 'Turtle'];
   String dropdownValue = 'Dog';
@@ -108,7 +108,7 @@ class _PetSelectPageState extends State<PetSelectPage> {
     return GestureDetector(
       onTap: () {
         print('\ndropdownValue : $dropdownValue\n');
-        Get.to(()=> PetNamePage());
+        Get.to(()=> PetNameScreen());
       },
       child: Container(
         width: Get.width * 0.40,

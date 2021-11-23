@@ -5,7 +5,7 @@ import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
 import 'package:pet_care/models/explore_program_model.dart';
 
-class ExploreProgramPage extends StatelessWidget {
+class ExploreProgramScreen extends StatelessWidget {
   // const ExploreProgramPage({Key? key}) : super(key: key);
 
   List<ExploreProgramModel> programsLists = [
