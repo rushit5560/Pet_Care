@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
-import 'package:pet_care/screens/first_screen.dart';
-import 'package:pet_care/screens/home_screen.dart';
-import 'package:pet_care/screens/second_screen.dart';
-import 'package:pet_care/screens/setting_screen.dart';
+import 'package:pet_care/screens/first_screen/first_screen.dart';
+import 'package:pet_care/screens/home_screen/home_screen.dart';
+import 'package:pet_care/screens/second_screen/second_screen.dart';
+import 'package:pet_care/screens/setting_screen/setting_screen.dart';
 
 
 class IndexScreen extends StatefulWidget {

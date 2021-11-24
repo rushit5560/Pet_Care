@@ -83,7 +83,7 @@ class ProfileScreen extends StatelessWidget {
                 width: Get.width * 0.40,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: CustomColor.kAppBarColor
+                  color: CustomColor.kButtonColor
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10),

@@ -33,4 +33,20 @@ class ImgUrl {
   static const lesson1Img = mainPath + 'lesson1.png';
   static const lesson2Img = mainPath + 'lesson2.png';
   static const lesson3Img = mainPath + 'lesson3.png';
+
+  static const exercise1 = mainPath + 'exercise1.png';
+  static const exercise2 = mainPath + 'exercise2.png';
+  static const exercise3 = mainPath + 'exercise3.png';
+  static const exercise4 = mainPath + 'exercise4.png';
+  static const exercise5 = mainPath + 'exercise5.png';
+  static const exercise6 = mainPath + 'exercise6.png';
+
+  static const exercise = mainPath + 'exercise.png';
+  static const games = mainPath + 'games.png';
+  static const good_manners = mainPath + 'good_manners.png';
+  static const articles = mainPath + 'articles.png';
+  static const training = mainPath + 'training.png';
+  static const backward = mainPath + 'backward.png';
+  static const forward = mainPath + 'fast-forward.png';
+  static const articles1 = mainPath + 'articles1.jpg';
 }

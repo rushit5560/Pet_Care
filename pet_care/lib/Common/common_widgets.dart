@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pet_care/screens/index_screen.dart';
+import 'package:pet_care/screens/index_screen/index_screen.dart';
 
 import 'custom_color.dart';
 import 'img_url.dart';
@@ -71,7 +71,8 @@ class SkipButton extends StatelessWidget {
             'SKIP',
             style: TextStyle(
                 fontSize: 18,
-              fontFamily: "Poppins"
+              fontFamily: "Poppins",
+              color: CustomColor.kSkipColor
             ),
           ),
         ),

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
-import 'package:pet_care/screens/ask_a_question_screen.dart';
-import 'package:pet_care/screens/explore_program_screen.dart';
-import 'package:pet_care/screens/profile_screen.dart';
+import 'package:pet_care/screens/ask_a_question_screen/ask_a_question_screen.dart';
+import 'package:pet_care/screens/explore_program_screen/explore_program_screen.dart';
+import 'package:pet_care/screens/profile_screen/profile_screen.dart';
 
-import 'notification_screen.dart';
+import '../notification_screen/notification_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   // const HomePage({Key? key}) : super(key: key);

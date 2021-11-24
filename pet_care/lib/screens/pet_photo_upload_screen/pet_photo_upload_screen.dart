@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/Common/img_url.dart';
-import 'package:pet_care/screens/pet_train_reminder_screen.dart';
+import 'package:pet_care/screens/pet_train_reminder_screen/pet_train_reminder_screen.dart';
 
 class PetPhotoUploadScreen extends StatefulWidget {
   // const PetPhotoUploadPage({Key? key}) : super(key: key);
@@ -220,7 +220,7 @@ class _PetPhotoUploadScreenState extends State<PetPhotoUploadScreen> {
             child: Text(
               'NEXT',
               style: TextStyle(
-                color: CustomColor.kTealColor,
+                color: CustomColor.kTabBarColor,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),

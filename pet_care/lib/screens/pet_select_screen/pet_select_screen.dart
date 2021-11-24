@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
-import 'package:pet_care/screens/pet_name_screen.dart';
+import 'package:pet_care/screens/pet_name_screen/pet_name_screen.dart';
 
 class PetSelectScreen extends StatefulWidget {
   // const SelectPetPage({Key? key}) : super(key: key);

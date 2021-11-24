@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/controller/signup_page_controller.dart';
-import 'package:pet_care/screens/signin_screen.dart';
+import 'package:pet_care/screens/signin_screen/signin_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   // const SignUpPage({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class SignUpScreen extends StatelessWidget {
                         CustomSpacer(height: Get.height * 0.05, width: 0),
                         // Screen Logo
                         CustomLogoImage(),
-                        CustomSpacer(height: Get.height * 0.12, width: 0),
+                        CustomSpacer(height: Get.height * 0.15, width: 0),
 
                         createAccountText(),
                         CustomSpacer(height: Get.height * 0.04, width: 0),

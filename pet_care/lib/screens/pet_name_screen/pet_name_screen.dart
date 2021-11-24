@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
-import 'package:pet_care/screens/pet_gender_screen.dart';
+import 'package:pet_care/screens/pet_gender_screen/pet_gender_screen.dart';
 
 class PetNameScreen extends StatelessWidget {
   // const PetNamePage({Key? key}) : super(key: key);

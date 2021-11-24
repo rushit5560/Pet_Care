@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
-import 'package:pet_care/screens/pet_photo_upload_screen.dart';
+import 'package:pet_care/screens/pet_photo_upload_screen/pet_photo_upload_screen.dart';
 
 
 class PetGenderScreen extends StatefulWidget {

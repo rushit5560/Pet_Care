@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:pet_care/Common/common_widgets.dart';
 import 'package:pet_care/Common/custom_color.dart';
 import 'package:pet_care/controller/signin_page_controller.dart';
-import 'package:pet_care/screens/index_screen.dart';
-import 'package:pet_care/screens/signup_screen.dart';
+import 'package:pet_care/screens/forgot_password_screen/forgot_password_screen.dart';
+import 'package:pet_care/screens/index_screen/index_screen.dart';
+import 'package:pet_care/screens/signup_screen/signup_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   // const LoginPage({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class SignInScreen extends StatelessWidget {
                         CustomSpacer(height: Get.height * 0.05, width: 0),
                         // Screen Logo
                         CustomLogoImage(),
-                        CustomSpacer(height: Get.height * 0.12, width: 0),
+                        CustomSpacer(height: Get.height * 0.15, width: 0),
 
                         loginText(),
                         CustomSpacer(height: Get.height * 0.05, width: 0),
@@ -180,11 +181,12 @@ class SignInScreen extends StatelessWidget {
           GestureDetector(
             onTap: () {
               print('Forget Password');
+              Get.to(() => ForgotPasswordScreen());
             },
             child: Text(
-              'Forget Password?',
+              'Forgot Password?',
               style: TextStyle(
-                color: Colors.grey,
+                color: Colors.black,
                 fontSize: 15
               ),
             ),
