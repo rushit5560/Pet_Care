@@ -49,4 +49,6 @@ class ImgUrl {
   static const backward = mainPath + 'backward.png';
   static const forward = mainPath + 'fast-forward.png';
   static const articles1 = mainPath + 'articles1.jpg';
+  static const daily_question = mainPath + 'daily_question.png';
+  static const activity = mainPath + 'activity.jpg';
 }
